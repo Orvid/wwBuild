@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0DAE2D7-D0DA-4840-9005-C4D546DA5A8A}</ProjectGuid>
+    <Compiler>DMD2</Compiler>
+    <PreferOneStepBuild>true</PreferOneStepBuild>
+    <UseDefaultCompiler>true</UseDefaultCompiler>
+    <IncrementalLinking>true</IncrementalLinking>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>JSONSerialization</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Debug</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+    <LinkinThirdPartyLibraries>false</LinkinThirdPartyLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>JSONSerialization</OutputName>
+    <UnittestMode>false</UnittestMode>
+    <ObjectsDirectory>obj\Release</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+    <ExtraCompilerArguments>-g -O -inline</ExtraCompilerArguments>
+    <LinkinThirdPartyLibraries>false</LinkinThirdPartyLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Unittest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Unittest</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <Target>StaticLibrary</Target>
+    <OutputName>JSONSerialization</OutputName>
+    <UnittestMode>true</UnittestMode>
+    <ObjectsDirectory>obj\Unittest</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+    <LinkinThirdPartyLibraries>false</LinkinThirdPartyLibraries>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="std\traitsExt.d" />
+    <Compile Include="std\performance\conv.d" />
+    <Compile Include="std\performance\array.d" />
+    <Compile Include="std\performance\bitmanip.d" />
+    <Compile Include="std\performance\string.d" />
+    <Compile Include="std\testing.d" />
+    <Compile Include="std\serialization\json.d" />
+    <Compile Include="std\serialization\core.d" />
+    <Compile Include="std\serialization\package.d" />
+    <Compile Include="std\serialization\bson.d" />
+    <Compile Include="std\serialization\xml.d" />
+    <Compile Include="main.d" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="std\" />
+    <Folder Include="std\performance\" />
+    <Folder Include="std\serialization\" />
+  </ItemGroup>
+</Project>
