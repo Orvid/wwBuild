@@ -116,7 +116,7 @@ void main(string[] args)
 				}
 
 				import std.regex : regex, replaceAll;
-				__gshared searchRE = regex(`fileIn\s*\(\s*wallworm_installation_path\s*\+\s*"/WallWorm\.com(.+?)\.ms"\)`, "");
+				__gshared searchRE = regex(`fileIn\s*\(\s*wallworm_installation_path\s*\+\s*"/WallWorm\.com(.+?)\.ms"\s*\)`, "");
 				writeln("\tReplacing references to encrypted files...");
 				foreach (ent; dirEntries(unmappedBaseOutputPath, SpanMode.breadth))
 				{
