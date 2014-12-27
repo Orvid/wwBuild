@@ -52,9 +52,6 @@
     <Compile Include="std\serialization\json.d" />
     <Compile Include="std\serialization\core.d" />
     <Compile Include="std\serialization\package.d" />
-    <Compile Include="std\serialization\bson.d" />
-    <Compile Include="std\serialization\xml.d" />
-    <Compile Include="main.d" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="std\" />
